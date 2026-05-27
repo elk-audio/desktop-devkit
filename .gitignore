@@ -5,3 +5,4 @@ __pycache__/
 .claude
 dist/
 sushi_rpc_pb2*.py
+examples/**/sensei_rpc_pb2*.py
