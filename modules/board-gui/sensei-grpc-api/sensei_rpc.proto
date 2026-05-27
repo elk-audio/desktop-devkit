@@ -1,0 +1,104 @@
+/** gRPC definitions for external control of sensei
+ *
+ * @copyright 2018 - 2025 Elk Audio AB, Stockholm
+ */
+
+syntax = "proto3";
+
+package sensei_rpc;
+
+message GenericVoidValue {}
+
+message AnalogEvent {
+  float value = 1;
+}
+
+message ToggleEvent {
+  bool value = 1;
+}
+
+message RelativeEvent {
+  int32 value = 1;
+}
+
+message RangeEvent {
+  int32 value = 1;
+}
+
+message Event {
+  int32 controller_id = 1;
+  int64 timestamp = 2;
+  oneof event {
+    AnalogEvent analog_ev = 3;
+    ToggleEvent toggle_ev = 4;
+    RelativeEvent relative_ev = 5;
+    RangeEvent range_ev = 6;
+  }
+}
+
+// Request to subscribe to events with optional filtering
+message SubscribeRequest {
+  // Optional: filter by specific controller IDs
+  repeated int32 controller_ids = 1;
+}
+
+// Request to update the state of a digital output controller 
+message UpdateLedRequest {
+  int32 controller_id = 1;
+  bool active = 2;
+}
+
+message WriteToDisplayRequest {
+  string data = 1;
+}
+
+message GetControllerMapResponse {
+  repeated PotState pots = 1;
+  repeated SwitchState switches = 2;
+  repeated EncoderState encoders = 3;
+  repeated RotaryState rotaries = 4;
+  repeated LedState leds = 5;
+}
+
+message PotState {
+  string name = 1;
+  int32 id = 2;
+}
+
+message SwitchState {
+  string name = 1;
+  int32 id = 2;
+}
+
+message EncoderState {
+  string name = 1;
+  int32 id = 2;
+}
+
+message RotaryState {
+  string name = 1;
+  int32 id = 2;
+}
+
+message LedState {
+  string name = 1;
+  int32 id = 2;
+}
+
+// Service definition
+service SenseiController {
+  // Stream of pin events (server streaming)
+  rpc SubscribeToEvents(SubscribeRequest) returns (stream Event);
+
+  // Force emission of events for all pin states
+  rpc RefreshAllStates(GenericVoidValue) returns (GenericVoidValue);
+
+  // Get a list of all controller_id <-> name mappings
+  rpc GetControllerMap(GenericVoidValue) returns (GetControllerMapResponse);
+
+  // Write to leds
+  rpc UpdateLed(UpdateLedRequest) returns (GenericVoidValue);
+
+  // Write to OLED display
+  rpc WriteToDisplay(WriteToDisplayRequest) returns (GenericVoidValue);
+}

@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_MicroAmp_#_MicroAmp_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxmicroamp.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxmicroamp.css> ;
+        modgui:screenshot <modgui/screenshot-gxmicroamp.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxmicroamp.png> ;
+        modgui:brand "Guitarix" ;
+        modgui:label "GxMicroAmp" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "microamp" ;
+        modgui:knob "cairo" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "GAIN" ;
+            lv2:name "GAIN" ;
+        ] ;
+    ] .

@@ -1,0 +1,28 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_eternity_#_eternity_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxeternity.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxeternity.css> ;
+        modgui:screenshot <modgui/screenshot-gxeternity.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxeternity.png> ;
+        modgui:brand " Guitarix " ;
+        modgui:label "GxEternity" ;
+        modgui:model "mod-panel" ;
+        modgui:panel "0720" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "DRIVE" ;
+            lv2:name "DRIVE" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "GLASS" ;
+            lv2:name "GLASS" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "LEVEL" ;
+            lv2:name "LEVEL" ;
+        ] ;
+    ] .

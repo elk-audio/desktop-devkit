@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_DOP250_#_DOP250_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxdop250.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxdop250.css> ;
+        modgui:screenshot <modgui/screenshot-gxdop250.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxdop250.png> ;
+        modgui:brand "Guitarix" ;
+        modgui:label "GxDOP250" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "dop250" ;
+        modgui:knob "cairo" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "GAIN" ;
+            lv2:name "GAIN" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "LEVEL" ;
+            lv2:name "LEVEL" ;
+        ] ;
+    ] .

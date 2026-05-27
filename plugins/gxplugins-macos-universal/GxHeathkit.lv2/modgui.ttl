@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_Heathkit_#_Heathkit_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxheathkit.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxheathkit.css> ;
+        modgui:screenshot <modgui/screenshot-gxheathkit.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxheathkit.png> ;
+        modgui:brand "Guitarix" ;
+        modgui:label "GxHeathkit" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "heathkit" ;
+        modgui:knob "cairo" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "LEVEL" ;
+            lv2:name "LEVEL" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "TONE" ;
+            lv2:name "TONE" ;
+        ] ;
+    ] .

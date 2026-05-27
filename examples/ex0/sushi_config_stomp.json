@@ -1,0 +1,34 @@
+{
+  "host_config": {
+    "samplerate": 48000
+  },
+  "tracks": [
+    {
+      "name": "TRACK",
+      "channels": 2,
+      "inputs": [
+        {
+          "engine_channel": 0,
+          "track_channel": 0
+        }
+      ],
+      "outputs": [
+        {
+          "engine_bus": 0,
+          "track_bus": 0
+        },
+        {
+          "engine_bus": 1,
+          "track_bus": 0
+        }
+      ],
+      "plugins": [
+        {
+          "uid": "sushi.testing.gain",
+          "name": "gain",
+          "type": "internal"
+        }
+      ]
+    }
+  ]
+}

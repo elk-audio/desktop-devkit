@@ -1,0 +1,94 @@
+{
+  "host_config": {
+    "samplerate": 48000,
+    "playing_mode": "playing"
+  },
+  "tracks": [
+    {
+      "name": "TRACK",
+      "channels": 1,
+      "inputs": [],
+      "outputs": [
+        {
+          "engine_channel": 0,
+          "track_channel": 0
+        },
+        {
+          "engine_channel": 1,
+          "track_channel": 0
+        }
+      ],
+      "plugins": [
+        {
+          "uid": "sushi.testing.wav_streamer",
+          "name": "Wave streamer",
+          "type": "internal"
+        },
+        {
+          "uri": "http://guitarix.sourceforge.net/plugins/gx_sd2lead_#_sd2lead_",
+          "name": "SD2",
+          "type": "lv2"
+        },
+        {
+          "uid": "sushi.testing.send",
+          "name": "Send_rev",
+          "type": "internal"
+        }
+      ]
+    },
+    {
+      "name": "AUX",
+      "channels": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "engine_channel": 0,
+          "track_channel": 0
+        },
+        {
+          "engine_channel": 1,
+          "track_channel": 1
+        }
+      ],
+      "plugins": [
+        {
+          "uid": "sushi.testing.return",
+          "name": "Return_rev",
+          "type": "internal"
+        },
+        {
+          "uid": "sushi.testing.freeverb",
+          "name": "Reverb",
+          "type": "internal"
+        }
+      ]
+    }
+  ],
+  "initial_state": [
+    {
+      "processor": "Wave streamer",
+      "parameters": {
+        "volume": 1.0,
+        "loop": 1.0,
+        "playing": 1.0
+      },
+      "properties": {
+        "file": "wavfiles/elG_08.wav"
+      }
+    },
+    {
+      "processor": "SD2",
+      "parameters": {
+        "DRIVE": 0.8,
+        "TONE": 0.8,
+        "LEVEL": 0.8
+      }
+    },
+    {
+      "processor": "Send_rev",
+      "properties": {
+        "destination_name": "Return_rev"
+      }
+    }
+  ]
+}

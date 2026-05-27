@@ -1,0 +1,12 @@
+[project]
+name = "elk-stomp-dev"
+version = "1.0.0"
+description = "Elk Stomp Devkit"
+readme = "README.md"
+requires-python = "==3.12.8"
+dependencies = ["sushi-gui", "guru", "mock-events-gui"]
+
+[tool.uv.sources]
+sushi-gui = { path = "modules/sushi-gui", editable = true }
+guru = { path = "modules/guru", editable = true }
+mock-events-gui = { path = "modules/board-gui", editable = true }

@@ -1,0 +1,6 @@
+[submodule "sushi-gui"]
+	path = modules/sushi-gui
+	url = ../sushi-gui.git
+[submodule "modules/guru"]
+	path = modules/guru
+	url = ../guru.git

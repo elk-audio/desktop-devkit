@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_clubdrive_#_clubdrive_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxclubdrive.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxclubdrive.css> ;
+        modgui:screenshot <modgui/screenshot-gxclubdrive.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxclubdrive.png> ;
+        modgui:brand " Guitarix " ;
+        modgui:label "GxClubDrive" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "black" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "DRIVE" ;
+            lv2:name "DRIVE" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "VOLUME" ;
+            lv2:name "VOLUME" ;
+        ] ;
+    ] .

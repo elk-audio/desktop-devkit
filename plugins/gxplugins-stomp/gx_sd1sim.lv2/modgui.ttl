@@ -1,0 +1,30 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_sd1sim_#_sd1sim_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxsd1.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxsd1.css> ;
+        modgui:screenshot <modgui/screenshot-gxsd1.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxsd1.png> ;
+        modgui:brand "Guitarix" ;
+        modgui:label "GxSD1" ;
+        modgui:model "boxy" ;
+        modgui:panel "3-knobs" ;
+        modgui:color "sd1" ;
+        modgui:knob "cairo" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "LEVEL" ;
+            lv2:name "LEVEL" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "TONE" ;
+            lv2:name "TONE" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "DRIVE" ;
+            lv2:name "DRIVE" ;
+        ] ;
+    ] .

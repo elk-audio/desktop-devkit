@@ -1,0 +1,8 @@
+timings.txt
+*.egg-info/
+uv.lock
+__pycache__/
+.claude
+dist/
+sushi_rpc_pb2*.py
+sensei_rpc_pb2*.py

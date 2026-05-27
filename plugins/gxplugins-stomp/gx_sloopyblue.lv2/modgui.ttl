@@ -1,0 +1,28 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_sloopyblue_#_sloopyblue_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxsloopyblue.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxsloopyblue.css> ;
+        modgui:screenshot <modgui/screenshot-gxsloopyblue.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxsloopyblue.png> ;
+        modgui:brand " Guitarix " ;
+        modgui:label "GxSloopyBlue" ;
+        modgui:model "combo-model-001" ;
+        modgui:panel "0550" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "GAIN" ;
+            lv2:name "GAIN" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "TONE" ;
+            lv2:name "TONE" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "VOLUME" ;
+            lv2:name "VOLUME" ;
+        ] ;
+    ] .

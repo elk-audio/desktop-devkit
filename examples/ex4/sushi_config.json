@@ -1,0 +1,328 @@
+{
+    "host_config" : {
+        "samplerate" : 48000,
+        "tempo" : 120.0,
+        "playing_mode" : "playing"
+    },
+    "tracks" : [
+        {
+            "name" : "bass",
+            "channels" : 2,
+            "inputs" : [],
+            "outputs" : [
+                {
+                    "engine_bus" : 0,
+                    "track_bus" : 0
+                }
+            ],
+            "plugins" : [
+                {
+                    "uid" : "sushi.testing.step_sequencer",
+                    "name" : "sequencer",
+                    "type" : "internal"
+                },
+                {
+                    "uid" : "sushi.testing.transposer",
+                    "name" : "transposer",
+                    "type" : "internal"
+                },
+                {
+                    "path" : "mda-vst3.vst3",
+                    "name" : "synth",
+                    "type" : "vst3x",
+                    "uid" : "mda JX10"
+                },
+                {
+                    "uid" : "sushi.brickworks.chorus",
+                    "name" : "chorus",
+                    "type" : "internal"
+                }
+            ]
+        },
+        {
+            "name" : "kick",
+            "channels" : 2,
+            "inputs" : [],
+            "outputs" : [
+                {
+                    "engine_bus" : 0,
+                    "track_bus" : 0
+                }
+            ],
+            "plugins" : [
+                {
+                    "uid" : "sushi.testing.step_sequencer",
+                    "name" : "kick_seq",
+                    "type" : "internal"
+                },
+                {
+                    "uid" : "sushi.testing.sampleplayer",
+                    "name" : "kick_sampler",
+                    "type" : "internal"
+                },
+                {
+                  "uid": "sushi.testing.send",
+                  "name": "kick_send",
+                  "type": "internal"
+                }
+
+            ]
+        },
+        {
+            "name" : "snare",
+            "channels" : 2,
+            "inputs" : [],
+            "outputs" : [
+                {
+                    "engine_bus" : 0,
+                    "track_bus" : 0
+                }
+            ],
+            "plugins" : [
+                {
+                    "uid" : "sushi.testing.step_sequencer",
+                    "name" : "snare_seq",
+                    "type" : "internal"
+                },
+                {
+                    "uid" : "sushi.testing.sampleplayer",
+                    "name" : "snare_sampler",
+                    "type" : "internal"
+                },
+                {
+                  "uid": "sushi.testing.send",
+                  "name": "snare_send",
+                  "type": "internal"
+                }
+            ]
+        },
+        {
+            "name" : "hat",
+            "channels" : 2,
+            "inputs" : [],
+            "outputs" : [
+                {
+                    "engine_bus" : 0,
+                    "track_bus" : 0
+                }
+            ],
+            "plugins" : [
+                {
+                    "uid" : "sushi.testing.step_sequencer",
+                    "name" : "hat_seq",
+                    "type" : "internal"
+                },
+                {
+                    "uid" : "sushi.testing.sampleplayer",
+                    "name" : "hat_sampler",
+                    "type" : "internal"
+                },
+                {
+                  "uid": "sushi.testing.send",
+                  "name": "hat_send",
+                  "type": "internal"
+                }
+            ]
+        },
+        {
+          "name": "aux_drums",
+          "channels": 2,
+          "inputs": [],
+          "outputs": [
+            {
+              "engine_channel": 0,
+              "track_channel": 0
+            },
+            {
+              "engine_channel": 1,
+              "track_channel": 1
+            }
+          ],
+          "plugins": [
+            {
+              "uid": "sushi.testing.return",
+              "name": "aux_return",
+              "type": "internal"
+            },
+            {
+              "uid": "sushi.brickworks.saturation",
+              "name": "aux_drive",
+              "type": "internal"
+            },
+            {
+              "uid": "sushi.testing.freeverb",
+              "name": "reverb",
+              "type": "internal"
+            },
+            {
+              "uid": "sushi.brickworks.noise_gate",
+              "name": "gate",
+              "type": "internal"
+            }
+          ]
+        }
+
+    ],
+    "midi" : {
+        "track_connections" : [
+            {
+                "port" : 0,
+                "channel" : "all",
+                "track" : "bass",
+                "raw_midi" : false
+            }
+        ]
+    },
+    "initial_state" : [
+        {
+            "processor" : "sequencer",
+            "parameters" : {
+                "pitch_1" : 0.4166666666666667,
+                "pitch_2" : 0.6666666666666666,
+                "pitch_3" : 0.4166666666666667,
+                "pitch_4" : 0.6666666666666666,
+                "pitch_5" : 0.3125,
+                "pitch_6" : 0.5625,
+                "pitch_7" : 0.3125,
+                "pitch_0" : 0.5625,
+                "step_0" : 1.0,
+                "step_1" : 1.0,
+                "step_2" : 1.0,
+                "step_3" : 1.0,
+                "step_4" : 1.0,
+                "step_5" : 1.0,
+                "step_6" : 1.0,
+                "step_7" : 1.0
+            }
+        },
+        {
+            "processor" : "transposer",
+            "parameters" : {
+                "transpose" : 0.5625
+            }
+        },
+        {
+            "processor" : "synth",
+            "parameters" : {
+              "OSC Mix": 0.33,
+              "OSC Tune": 0.25,
+              "OSC Fine": 0.66,
+              "Gld Rate": 0.35,
+              "Gld Bend": 0.5,
+              "VCF Freq": 0.8,
+              "VCF Reso": 0.3,
+              "VCF Env": 0.2,
+              "VCF LFO": 0.1,
+              "VCF Vel": 0.5,
+              "VCF Att": 0.0,
+              "VCF Dec": 0.05,
+              "VCF Sus": 0.5,
+              "VCF Rel": 0.05,
+              "ENV Att": 0,
+              "ENV Dec": 0.65,
+              "ENV Sus": 1.0,
+              "ENV Rel": 0.05,
+              "LFO Rate": 0.1,
+              "Vibrato": 0.2,
+              "Noise": 0.0,
+              "Octave": 0.4,
+              "Tuning": 0.5
+            }
+        },
+        {
+          "processor": "kick_sampler",
+          "properties": {
+            "sample_file": "wavfiles/kick.wav"
+          }
+        },
+        {
+            "processor" : "kick_seq",
+            "parameters" : {
+                "pitch_4" : 0.5,
+                "pitch_0" : 0.5,
+                "step_0" : 0.0,
+                "step_1" : 0.0,
+                "step_2" : 1.0,
+                "step_3" : 0.0,
+                "step_4" : 0.0,
+                "step_5" : 0.0,
+                "step_6" : 1.0,
+                "step_7" : 0.0
+            }
+        },
+        {
+          "processor": "snare_sampler",
+          "properties": {
+            "sample_file": "wavfiles/snare.wav"
+          }
+        },
+        {
+            "processor" : "snare_seq",
+            "parameters" : {
+                "pitch_4" : 0.5,
+                "pitch_0" : 0.5,
+                "step_0" : 1.0,
+                "step_1" : 0.0,
+                "step_2" : 0.0,
+                "step_3" : 0.0,
+                "step_4" : 1.0,
+                "step_5" : 0.0,
+                "step_6" : 0.0,
+                "step_7" : 0.0
+            }
+        },
+        {
+          "processor": "hat_sampler",
+          "properties": {
+            "sample_file": "wavfiles/hat.wav"
+          },
+          "parameters" : {
+              "volume" : 0.66
+
+          }
+        },
+        {
+            "processor" : "hat_seq",
+            "parameters" : {
+                "pitch_4" : 0.5,
+                "pitch_0" : 0.5,
+                "step_0" : 0.0,
+                "step_1" : 1.0,
+                "step_2" : 0.0,
+                "step_3" : 1.0,
+                "step_4" : 0.0,
+                "step_5" : 1.0,
+                "step_6" : 0.0,
+                "step_7" : 1.0
+            }
+        },
+        {
+          "processor": "kick_send",
+          "properties": {
+            "destination_name": "aux_return"
+          }
+        },
+        {
+          "processor": "snare_send",
+          "properties": {
+            "destination_name": "aux_return"
+          }
+        },
+        {
+          "processor": "hat_send",
+          "properties": {
+            "destination_name": "aux_return"
+          }
+        },
+        {
+          "processor": "gate",
+          "parameters" : {
+              "threshold" : 0.5,
+              "ratio" : 1.0,
+              "attack" : 0.05,
+              "release" : 0.1
+          }
+        }
+
+    ]
+}
