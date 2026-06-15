@@ -8,7 +8,7 @@ if [ $(uname -o) = "Msys" ]; then
 
     # uncomment this line and change the audio device IDs to the ones from
     # --dump-audio-devices if the default devices don't work
-    #SUSHI_BIN="bin/sushi.exe --portaudio --audio-output-device=2 --audio-input-device=3"
+    #SUSHI_BIN="bin/win/sushi.exe --portaudio --audio-output-device=2 --audio-input-device=3"
     GLUE_RUNNER="uv run"
     SUSHI_CONFIG="sushi_config.json"
 elif [ $(uname -o) = "Darwin" ]; then
